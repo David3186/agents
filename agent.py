@@ -17,8 +17,8 @@ from copy import deepcopy
 from tqdm import tqdm
 
 # DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-DEVICE="cuda:2"
-# DEVICE=torch.device("cpu")
+# DEVICE="cuda:2"
+DEVICE=torch.device("cpu")
 
 BATCH_SIZE = 128
 GAMMA = 0.99
@@ -179,17 +179,14 @@ class DQN(nn.Module):
 class CNN(nn.Module):
     def __init__(self, n_actions):
         super().__init__()
-        self.conv1 = nn.Conv2d(3, 1, 5, stride=2)
+        self.conv1 = nn.Conv2d(3, 6, 5, stride=2)
         self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(1, 1, 5)
-        # self.fc1 = nn.Linear(1 * 37 * 49, 120)
-        self.fc1 = nn.Linear(1 * 17 * 23, n_actions)
-        # self.fc2 = nn.Linear(120, 84)
-        # self.fc3 = nn.Linear(120, n_actions)
+        self.conv2 = nn.Conv2d(6, 6, 5)
+        self.fc1 = nn.Linear(6 * 17 * 23, 64)
+        self.fc2 = nn.Linear(64, n_actions)
 
     def forward(self, x):
         x = x.swapdims(1, -1)
-        # import pdb; pdb.set_trace()
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = torch.flatten(x, 1) # flatten all dimensions except batch
@@ -203,6 +200,6 @@ if __name__ == "__main__":
     n_observations = env.observation_space.shape[0]
     n_actions = env.action_space.n
     policy_net = CNN(n_actions)
-    agent = Agent("ALE/SpaceInvaders-v5", torch.load("network.pt"))
+    agent = Agent("ALE/SpaceInvaders-v5", torch.load('network2.pt', map_location=torch.device('cpu')))
     # agent.train()
     agent.play()
