@@ -5,6 +5,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from collections import namedtuple, deque
 from itertools import count
+from functools import partial
 
 from utils import *
 
@@ -16,18 +17,21 @@ import torch.nn.functional as F
 from copy import deepcopy
 from tqdm import tqdm
 
-# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# DEVICE="cuda:2"
-DEVICE=torch.device("cpu")
+print = partial(print, flush=True)
 
+# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE="cuda:0"
+# DEVICE=torch.device("cpu")
+
+CNN_FILE = "cracked_macronetwork_tau_.5_lr_1e-5.pt"
 BATCH_SIZE = 128
 GAMMA = 0.99
 EPS_START = 0.9
 EPS_END = 0.05
 EPS_DECAY = 1000
-TAU = 0.005
-LR = 1e-4
-NUM_EPISODES = 500
+TAU = 0.5
+LR = 1e-5
+NUM_EPISODES = 5000
 
 class Agent():
     def __init__(self, game_type : str, policy_net : nn.Module):
@@ -108,13 +112,17 @@ class Agent():
             optimizer.step()
 
         for i_episode in tqdm(range(NUM_EPISODES), leave=False, desc="Training", disable=None):
+            if i_episode % 10 == 0:
+                torch.save(self.policy_net, CNN_FILE)
             # Initialize the environment and get its state
             state, info = env.reset()
             state = torch.tensor(state, dtype=torch.float32, device=DEVICE).unsqueeze(0)
 
+            rewards = []
             for t in count():
                 action = select_action(state)
                 observation, reward, terminated, truncated, _ = env.step(action.item())
+                rewards.append(reward)
                 reward = torch.tensor([reward], device=DEVICE)
                 done = terminated or truncated
 
@@ -143,9 +151,10 @@ class Agent():
                 target_net.load_state_dict(target_net_state_dict)
 
                 if done:
+                    print(sum(rewards))
                     break
 
-        torch.save(self.policy_net, "network2.pt")
+        torch.save(self.policy_net, CNN_FILE)
     def get_action(self, observation):
         state = torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)
         with torch.no_grad():
@@ -179,20 +188,21 @@ class DQN(nn.Module):
 class CNN(nn.Module):
     def __init__(self, n_actions):
         super().__init__()
-        self.conv1 = nn.Conv2d(3, 6, 5, stride=2)
+        self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(6, 6, 5)
-        self.fc1 = nn.Linear(6 * 17 * 23, 64)
-        self.fc2 = nn.Linear(64, n_actions)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(16*37*49, 128)
+        self.fc2 = nn.Linear(128, n_actions)
 
     def forward(self, x):
         x = x.swapdims(1, -1)
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = torch.flatten(x, 1) # flatten all dimensions except batch
+        x = F.relu(self.fc1(x))
         # x = F.relu(self.fc1(x))
-        # x = F.relu(self.fc2(x))
-        return self.fc1(x)
+        x = self.fc2(x)
+        return x
     
 
 if __name__ == "__main__":
@@ -200,6 +210,6 @@ if __name__ == "__main__":
     n_observations = env.observation_space.shape[0]
     n_actions = env.action_space.n
     policy_net = CNN(n_actions)
-    agent = Agent("ALE/SpaceInvaders-v5", torch.load('network2.pt', map_location=torch.device('cpu')))
-    # agent.train()
+    agent = Agent("ALE/SpaceInvaders-v5", policy_net)
+    agent.train()
     agent.play()
