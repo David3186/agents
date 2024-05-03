@@ -16,7 +16,9 @@ import torch.nn.functional as F
 from copy import deepcopy
 from tqdm import tqdm
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE="cuda:2"
+# DEVICE=torch.device("cpu")
 
 BATCH_SIZE = 128
 GAMMA = 0.99
@@ -143,6 +145,7 @@ class Agent():
                 if done:
                     break
 
+        torch.save(self.policy_net, "network2.pt")
     def get_action(self, observation):
         state = torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)
         with torch.no_grad():
@@ -200,6 +203,6 @@ if __name__ == "__main__":
     n_observations = env.observation_space.shape[0]
     n_actions = env.action_space.n
     policy_net = CNN(n_actions)
-    agent = Agent("ALE/SpaceInvaders-v5", policy_net)
-    agent.train()
+    agent = Agent("ALE/SpaceInvaders-v5", torch.load("network.pt"))
+    # agent.train()
     agent.play()
