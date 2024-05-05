@@ -1,3 +1,8 @@
+from dataclasses import dataclass
+import plot_running_avg
+import json
+from pathlib import Path
+import sys
 import gymnasium as gym
 import math
 import random
@@ -20,59 +25,83 @@ from tqdm import tqdm
 print = partial(print, flush=True)
 
 # DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-DEVICE="cuda:0"
+DEVICE="cuda:3"
 # DEVICE=torch.device("cpu")
 
-CNN_FILE = "cracked_macronetwork_tau_.5_lr_1e-5.pt"
-BATCH_SIZE = 128
-GAMMA = 0.99
-EPS_START = 0.9
-EPS_END = 0.05
-EPS_DECAY = 1000
-TAU = 0.5
-LR = 1e-5
-NUM_EPISODES = 5000
+@dataclass
+class TrainConfig:
+    batch_size: int
+    gamma: float
+    eps_start: float
+    eps_end: float
+    eps_decay: int
+    tau: float
+    lr: float
+    num_episodes: int
+
+CNN_DIR = "paper_network"
+
+config = TrainConfig(
+    batch_size=128,
+    gamma = 0.99,
+    eps_start = 0.9,
+    eps_end = 0.1,
+    eps_decay = 1000,
+    tau = 0.005,
+    lr = 1e-4,
+    num_episodes = 5000
+)
 
 class Agent():
     def __init__(self, game_type : str, policy_net : nn.Module):
         self.game_type = game_type
         self.policy_net = policy_net.to(DEVICE)
+        
 
-    def train(self):
+    def train(self, train_config: TrainConfig):
+        # self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type)
+        self.baseline_reward = 180
+        model_dir = ("models" / Path(CNN_DIR))
+        if model_dir.exists():
+            if len(sys.argv) <= 1 or not sys.argv[1] == "--force":
+                raise FileExistsError(f"Model directory {model_dir} already exists")
+        model_dir.mkdir(exist_ok=True)
+        (model_dir / 'train_config.json').write_text(json.dumps(train_config.__dict__, indent=2))
+
+        CNN_FILE = model_dir / "model.pt"
+
         target_net = deepcopy(self.policy_net)
 
-        env = gym.make(self.game_type)
+        env = gym.make(self.game_type, obs_type="grayscale", frameskip=3)
 
-        optimizer = optim.AdamW(self.policy_net.parameters(), lr=LR, amsgrad=True)
+        optimizer = optim.AdamW(self.policy_net.parameters(), lr=train_config.lr, amsgrad=True)
 
         memory = ReplayMemory(10_000)
         
         steps_done = 0
+        data = []
 
         def select_action(state):
             nonlocal steps_done
             sample = random.random()
-            eps_threshold = EPS_END + (EPS_START - EPS_END) * \
-                math.exp(-1. * steps_done / EPS_DECAY)
+            eps_threshold = train_config.eps_end + (train_config.eps_start - train_config.eps_end) * math.exp(-steps_done / train_config.eps_decay)
             steps_done += 1
             if sample > eps_threshold:
                 with torch.no_grad():
                     # Take the argmax to compute the action to take
-
                     return self.policy_net(state).argmax(dim=1).unsqueeze(0)
             else:
                 return torch.tensor([[env.action_space.sample()]], device=DEVICE, dtype=torch.long)
             
 
         def optimize_model():
-            if len(memory) < BATCH_SIZE:
+            if len(memory) < train_config.batch_size:
                 return
-            transitions = memory.sample(BATCH_SIZE)
+            transitions = memory.sample(train_config.batch_size)
             # Transpose the batch (see https://stackoverflow.com/a/19343/3343043 for
             # detailed explanation). This converts batch-array of Transitions
             # to Transition of batch-arrays.
             batch = Transition(*zip(*transitions))
-
             # Compute a mask of non-final states and concatenate the batch elements
             # (a final state would've been the one after which simulation ended)
 
@@ -81,12 +110,14 @@ class Agent():
             non_final_next_states = torch.cat([s for s in batch.next_state if s is not None])
 
             state_batch = torch.cat(batch.state)
+            # import pdb; pdb.set_trace()
             action_batch = torch.cat(batch.action)
             reward_batch = torch.cat(batch.reward)
 
             # Compute Q(s_t, a) - the model computes Q(s_t), then we select the
             # columns of actions taken. These are the actions which would've been taken
             # for each batch state according to policy_net
+            # import pdb; pdb.set_trace()
             state_action_values = self.policy_net(state_batch).gather(1, action_batch)
 
             # Compute V(s_{t+1}) for all next states.
@@ -94,11 +125,11 @@ class Agent():
             # on the "older" target_net; selecting their best reward with max(1).values
             # This is merged based on the mask, such that we'll have either the expected
             # state value or 0 in case the state was final.
-            next_state_values = torch.zeros(BATCH_SIZE, device=DEVICE)
+            next_state_values = torch.zeros(train_config.batch_size, device=DEVICE)
             with torch.no_grad():
                 next_state_values[non_final_mask] = target_net(non_final_next_states).max(1).values
             # Compute the expected Q values
-            expected_state_action_values = (next_state_values * GAMMA) + reward_batch
+            expected_state_action_values = (next_state_values * train_config.gamma) + reward_batch
 
             # Compute Huber loss
             criterion = nn.SmoothL1Loss()
@@ -111,14 +142,17 @@ class Agent():
             torch.nn.utils.clip_grad_value_(self.policy_net.parameters(), 100)
             optimizer.step()
 
-        for i_episode in tqdm(range(NUM_EPISODES), leave=False, desc="Training", disable=None):
-            if i_episode % 10 == 0:
-                torch.save(self.policy_net, CNN_FILE)
+        for i_episode in tqdm(range(train_config.num_episodes), leave=False, desc="Training", disable=None):
+            
             # Initialize the environment and get its state
+            rewards = []
             state, info = env.reset()
             state = torch.tensor(state, dtype=torch.float32, device=DEVICE).unsqueeze(0)
 
-            rewards = []
+            if i_episode % 10 == 0:
+                torch.save(self.policy_net, CNN_FILE)
+                plot_running_avg.plot_running_avg(data, model_dir, self.baseline_reward)
+
             for t in count():
                 action = select_action(state)
                 observation, reward, terminated, truncated, _ = env.step(action.item())
@@ -146,14 +180,18 @@ class Agent():
                 policy_net_state_dict = self.policy_net.state_dict()
 
                 for key in policy_net_state_dict:
-                    target_net_state_dict[key] = policy_net_state_dict[key]*TAU + target_net_state_dict[key]*(1-TAU)
+                    target_net_state_dict[key] = policy_net_state_dict[key]*train_config.tau + target_net_state_dict[key]*(1-train_config.tau)
 
                 target_net.load_state_dict(target_net_state_dict)
 
                 if done:
-                    print(sum(rewards))
+                    with open(model_dir / "rewards.txt", "a") as outfile:
+                        print(sum(rewards), file=outfile)
+
+                    data.append(sum(rewards))
                     break
 
+        
         torch.save(self.policy_net, CNN_FILE)
     def get_action(self, observation):
         state = torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)
@@ -161,7 +199,7 @@ class Agent():
             return self.policy_net(state).argmax(dim=1).item()
         
     def play(self):
-        env = gym.make(self.game_type, render_mode="human")
+        env = gym.make(self.game_type, obs_type="grayscale", render_mode="human", frameskip=3)
         observation, info = env.reset()
         
         while True:
@@ -188,28 +226,35 @@ class DQN(nn.Module):
 class CNN(nn.Module):
     def __init__(self, n_actions):
         super().__init__()
-        self.conv1 = nn.Conv2d(3, 6, 5)
-        self.pool = nn.MaxPool2d(2, 2)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(16*37*49, 128)
-        self.fc2 = nn.Linear(128, n_actions)
+        self.conv1 = nn.Conv2d(1, 16, 8, 4)
+        # self.pool = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(16, 32, 4, 2)
+        self.fc1 = nn.Linear(13824, 256)
+        self.fc2 = nn.Linear(256, n_actions)
 
     def forward(self, x):
-        x = x.swapdims(1, -1)
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = torch.flatten(x, 1) # flatten all dimensions except batch
-        x = F.relu(self.fc1(x))
+        # x = self.pool(F.relu(self.conv1(x)))
+        # x = self.pool(F.relu(self.conv2(x)))
+        # x = torch.flatten(x, 1) # flatten all dimensions except batch
         # x = F.relu(self.fc1(x))
+        # x = F.relu(self.fc2(x))
+        # x = self.fc3(x)
+        x = x.unsqueeze(1)
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
+        x = torch.flatten(x, start_dim=1)
+        x = F.relu(self.fc1(x))
         x = self.fc2(x)
         return x
+
     
 
 if __name__ == "__main__":
-    env = gym.make("ALE/SpaceInvaders-v5")
+    env = gym.make("ALE/SpaceInvaders-v5", obs_type="grayscale", frameskip=3)
     n_observations = env.observation_space.shape[0]
     n_actions = env.action_space.n
     policy_net = CNN(n_actions)
     agent = Agent("ALE/SpaceInvaders-v5", policy_net)
-    agent.train()
+    agent.train(config)
+    # agent = Agent("ALE/SpaceInvaders-v5", torch.load("models/supercracked_macronetwork/model.pt"))
     agent.play()
