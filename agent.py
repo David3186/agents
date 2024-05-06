@@ -24,8 +24,8 @@ from tqdm import tqdm
 
 print = partial(print, flush=True)
 
-# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-DEVICE="cuda:3"
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# DEVICE="cuda:3" 
 # DEVICE=torch.device("cpu")
 
 @dataclass
@@ -89,6 +89,7 @@ class Agent():
             if sample > eps_threshold:
                 with torch.no_grad():
                     # Take the argmax to compute the action to take
+                    state = torch.cat(tuple(state)).unsqueeze(0)
                     return self.policy_net(state).argmax(dim=1).unsqueeze(0)
             else:
                 return torch.tensor([[env.action_space.sample()]], device=DEVICE, dtype=torch.long)
@@ -107,10 +108,9 @@ class Agent():
 
 
             non_final_mask = torch.tensor(tuple([s != None for s in batch.next_state]), device=DEVICE, dtype=torch.bool)
-            non_final_next_states = torch.cat([s for s in batch.next_state if s is not None])
+            non_final_next_states = torch.cat([s for s in batch.next_state if s is not None]).unsqueeze(1)
 
-            state_batch = torch.cat(batch.state)
-            # import pdb; pdb.set_trace()
+            state_batch = torch.stack(batch.state)
             action_batch = torch.cat(batch.action)
             reward_batch = torch.cat(batch.reward)
 
@@ -153,8 +153,11 @@ class Agent():
                 torch.save(self.policy_net, CNN_FILE)
                 plot_running_avg.plot_running_avg(data, model_dir, self.baseline_reward)
 
+            state = deque(maxlen=4)
+
             for t in count():
-                action = select_action(state)
+                action = select_action(state) if len(state) >= 4 else torch.tensor([[env.action_space.sample()]], device=DEVICE, dtype=torch.long)
+
                 observation, reward, terminated, truncated, _ = env.step(action.item())
                 rewards.append(reward)
                 reward = torch.tensor([reward], device=DEVICE)
@@ -166,10 +169,11 @@ class Agent():
                     next_state = torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)
 
                 # Store the transition in memory
-                memory.push(state, action, next_state, reward)
+                if len(state) >= 4: 
+                    memory.push(torch.cat(tuple(state)), action, next_state, reward)
 
                 # Move to the next state
-                state = next_state
+                state.append(next_state)
 
                 # Perform one step of the optimization (on the policy network)
                 optimize_model()
@@ -193,18 +197,27 @@ class Agent():
 
         
         torch.save(self.policy_net, CNN_FILE)
-    def get_action(self, observation):
-        state = torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)
+
+    def get_action(self, state):
         with torch.no_grad():
+            state = torch.cat(state).unsqueeze(0)
             return self.policy_net(state).argmax(dim=1).item()
         
     def play(self):
         env = gym.make(self.game_type, obs_type="grayscale", render_mode="human", frameskip=3)
         observation, info = env.reset()
         
+        state = deque(maxlen=4)
+        state.append(observation)
+
         while True:
-            action = self.get_action(observation)
+            action = self.get_action(state) if len(state) >= 4 else env.action_space.sample()
+            
             observation, reward, terminated, truncated, info = env.step(action)
+            
+            observation = torch.tensor(observation, dtype=torch.float32, device=DEVICE)
+            state.append(observation)
+            
             if terminated or truncated:
                 break
 
@@ -226,7 +239,7 @@ class DQN(nn.Module):
 class CNN(nn.Module):
     def __init__(self, n_actions):
         super().__init__()
-        self.conv1 = nn.Conv2d(1, 16, 8, 4)
+        self.conv1 = nn.Conv2d(4, 16, 8, 4)
         # self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(16, 32, 4, 2)
         self.fc1 = nn.Linear(13824, 256)
@@ -239,7 +252,7 @@ class CNN(nn.Module):
         # x = F.relu(self.fc1(x))
         # x = F.relu(self.fc2(x))
         # x = self.fc3(x)
-        x = x.unsqueeze(1)
+        # x = x.unsqueeze(1)
         x = F.relu(self.conv1(x))
         x = F.relu(self.conv2(x))
         x = torch.flatten(x, start_dim=1)
