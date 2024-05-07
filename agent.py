@@ -24,8 +24,8 @@ from tqdm import tqdm
 
 print = partial(print, flush=True)
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# DEVICE="cuda:3" 
+# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE="cuda:1" 
 # DEVICE=torch.device("cpu")
 
 @dataclass
@@ -39,7 +39,7 @@ class TrainConfig:
     lr: float
     num_episodes: int
 
-CNN_DIR = "paper_network"
+CNN_DIR = "context_paper_network_v2"
 
 config = TrainConfig(
     batch_size=128,
@@ -49,7 +49,7 @@ config = TrainConfig(
     eps_decay = 1000,
     tau = 0.005,
     lr = 1e-4,
-    num_episodes = 5000
+    num_episodes = 100_000
 )
 
 class Agent():
@@ -59,8 +59,7 @@ class Agent():
         
 
     def train(self, train_config: TrainConfig):
-        # self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type)
-        self.baseline_reward = 180
+        self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type)
         model_dir = ("models" / Path(CNN_DIR))
         if model_dir.exists():
             if len(sys.argv) <= 1 or not sys.argv[1] == "--force":
@@ -76,7 +75,7 @@ class Agent():
 
         optimizer = optim.AdamW(self.policy_net.parameters(), lr=train_config.lr, amsgrad=True)
 
-        memory = ReplayMemory(10_000)
+        memory = ReplayMemory(20_000)
         
         steps_done = 0
         data = []
@@ -108,7 +107,7 @@ class Agent():
 
 
             non_final_mask = torch.tensor(tuple([s != None for s in batch.next_state]), device=DEVICE, dtype=torch.bool)
-            non_final_next_states = torch.cat([s for s in batch.next_state if s is not None]).unsqueeze(1)
+            non_final_next_states = torch.stack([s for s in batch.next_state if s is not None])
 
             state_batch = torch.stack(batch.state)
             action_batch = torch.cat(batch.action)
@@ -166,14 +165,16 @@ class Agent():
                 if terminated:
                     next_state = None
                 else:
-                    next_state = torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)
+                    # next_state = deque((state[1:], torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0)), 4)
+                    next_state = deepcopy(state)
+                    next_state.append(torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0))
 
                 # Store the transition in memory
                 if len(state) >= 4: 
-                    memory.push(torch.cat(tuple(state)), action, next_state, reward)
+                    memory.push(torch.cat(tuple(state)), action, torch.cat(tuple(next_state)) if next_state else None, reward)
 
                 # Move to the next state
-                state.append(next_state)
+                state = next_state
 
                 # Perform one step of the optimization (on the policy network)
                 optimize_model()
@@ -190,7 +191,9 @@ class Agent():
 
                 if done:
                     with open(model_dir / "rewards.txt", "a") as outfile:
-                        print(sum(rewards), file=outfile)
+                        print(f"Rewards: {sum(rewards)}", file=outfile)
+                        print(f"Cum steps: {steps_done}", file=outfile)
+                        
 
                     data.append(sum(rewards))
                     break
@@ -240,19 +243,11 @@ class CNN(nn.Module):
     def __init__(self, n_actions):
         super().__init__()
         self.conv1 = nn.Conv2d(4, 16, 8, 4)
-        # self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(16, 32, 4, 2)
         self.fc1 = nn.Linear(13824, 256)
         self.fc2 = nn.Linear(256, n_actions)
 
     def forward(self, x):
-        # x = self.pool(F.relu(self.conv1(x)))
-        # x = self.pool(F.relu(self.conv2(x)))
-        # x = torch.flatten(x, 1) # flatten all dimensions except batch
-        # x = F.relu(self.fc1(x))
-        # x = F.relu(self.fc2(x))
-        # x = self.fc3(x)
-        # x = x.unsqueeze(1)
         x = F.relu(self.conv1(x))
         x = F.relu(self.conv2(x))
         x = torch.flatten(x, start_dim=1)
