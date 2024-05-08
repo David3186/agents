@@ -1,0 +1,1970 @@
+Rewards: 80.0
+Cum steps: 393
+Rewards: 375.0
+Cum steps: 1395
+Rewards: 120.0
+Cum steps: 2088
+Rewards: 30.0
+Cum steps: 2585
+Rewards: 110.0
+Cum steps: 3076
+Rewards: 475.0
+Cum steps: 4111
+Rewards: 135.0
+Cum steps: 4672
+Rewards: 35.0
+Cum steps: 5058
+Rewards: 80.0
+Cum steps: 5603
+Rewards: 110.0
+Cum steps: 6228
+Rewards: 20.0
+Cum steps: 6775
+Rewards: 300.0
+Cum steps: 7884
+Rewards: 390.0
+Cum steps: 8948
+Rewards: 105.0
+Cum steps: 9599
+Rewards: 35.0
+Cum steps: 10269
+Rewards: 140.0
+Cum steps: 10964
+Rewards: 210.0
+Cum steps: 11743
+Rewards: 270.0
+Cum steps: 13070
+Rewards: 120.0
+Cum steps: 13726
+Rewards: 5.0
+Cum steps: 14123
+Rewards: 210.0
+Cum steps: 14938
+Rewards: 30.0
+Cum steps: 15334
+Rewards: 290.0
+Cum steps: 16169
+Rewards: 225.0
+Cum steps: 17688
+Rewards: 100.0
+Cum steps: 18331
+Rewards: 120.0
+Cum steps: 18980
+Rewards: 55.0
+Cum steps: 19577
+Rewards: 215.0
+Cum steps: 20549
+Rewards: 180.0
+Cum steps: 21229
+Rewards: 65.0
+Cum steps: 21632
+Rewards: 70.0
+Cum steps: 22320
+Rewards: 390.0
+Cum steps: 23291
+Rewards: 65.0
+Cum steps: 23720
+Rewards: 135.0
+Cum steps: 24552
+Rewards: 185.0
+Cum steps: 25189
+Rewards: 125.0
+Cum steps: 25940
+Rewards: 65.0
+Cum steps: 26555
+Rewards: 90.0
+Cum steps: 27090
+Rewards: 75.0
+Cum steps: 27717
+Rewards: 180.0
+Cum steps: 28410
+Rewards: 80.0
+Cum steps: 28900
+Rewards: 230.0
+Cum steps: 29801
+Rewards: 180.0
+Cum steps: 30509
+Rewards: 160.0
+Cum steps: 31226
+Rewards: 265.0
+Cum steps: 32438
+Rewards: 150.0
+Cum steps: 33060
+Rewards: 225.0
+Cum steps: 34543
+Rewards: 80.0
+Cum steps: 34928
+Rewards: 240.0
+Cum steps: 35959
+Rewards: 210.0
+Cum steps: 36607
+Rewards: 290.0
+Cum steps: 37614
+Rewards: 110.0
+Cum steps: 38303
+Rewards: 30.0
+Cum steps: 38750
+Rewards: 120.0
+Cum steps: 39253
+Rewards: 180.0
+Cum steps: 39933
+Rewards: 205.0
+Cum steps: 40802
+Rewards: 155.0
+Cum steps: 41534
+Rewards: 320.0
+Cum steps: 42269
+Rewards: 75.0
+Cum steps: 42622
+Rewards: 120.0
+Cum steps: 43288
+Rewards: 210.0
+Cum steps: 44108
+Rewards: 50.0
+Cum steps: 44609
+Rewards: 315.0
+Cum steps: 45810
+Rewards: 15.0
+Cum steps: 46135
+Rewards: 155.0
+Cum steps: 46989
+Rewards: 210.0
+Cum steps: 47847
+Rewards: 80.0
+Cum steps: 48498
+Rewards: 105.0
+Cum steps: 48877
+Rewards: 105.0
+Cum steps: 49520
+Rewards: 180.0
+Cum steps: 50283
+Rewards: 80.0
+Cum steps: 50795
+Rewards: 180.0
+Cum steps: 51570
+Rewards: 475.0
+Cum steps: 52591
+Rewards: 155.0
+Cum steps: 53399
+Rewards: 160.0
+Cum steps: 54174
+Rewards: 245.0
+Cum steps: 55111
+Rewards: 240.0
+Cum steps: 56037
+Rewards: 50.0
+Cum steps: 56531
+Rewards: 155.0
+Cum steps: 57302
+Rewards: 150.0
+Cum steps: 58003
+Rewards: 180.0
+Cum steps: 58840
+Rewards: 110.0
+Cum steps: 59449
+Rewards: 105.0
+Cum steps: 59852
+Rewards: 140.0
+Cum steps: 60606
+Rewards: 30.0
+Cum steps: 61139
+Rewards: 110.0
+Cum steps: 61783
+Rewards: 110.0
+Cum steps: 62496
+Rewards: 110.0
+Cum steps: 63263
+Rewards: 215.0
+Cum steps: 64372
+Rewards: 135.0
+Cum steps: 65038
+Rewards: 190.0
+Cum steps: 65933
+Rewards: 120.0
+Cum steps: 66546
+Rewards: 35.0
+Cum steps: 66946
+Rewards: 375.0
+Cum steps: 67987
+Rewards: 125.0
+Cum steps: 68832
+Rewards: 520.0
+Cum steps: 69885
+Rewards: 120.0
+Cum steps: 70524
+Rewards: 135.0
+Cum steps: 71167
+Rewards: 110.0
+Cum steps: 71746
+Rewards: 80.0
+Cum steps: 72241
+Rewards: 135.0
+Cum steps: 72889
+Rewards: 180.0
+Cum steps: 73554
+Rewards: 150.0
+Cum steps: 74188
+Rewards: 90.0
+Cum steps: 74807
+Rewards: 130.0
+Cum steps: 75410
+Rewards: 135.0
+Cum steps: 75957
+Rewards: 210.0
+Cum steps: 76738
+Rewards: 75.0
+Cum steps: 77262
+Rewards: 460.0
+Cum steps: 78184
+Rewards: 260.0
+Cum steps: 79141
+Rewards: 210.0
+Cum steps: 80000
+Rewards: 225.0
+Cum steps: 80885
+Rewards: 210.0
+Cum steps: 81600
+Rewards: 350.0
+Cum steps: 83003
+Rewards: 80.0
+Cum steps: 83407
+Rewards: 110.0
+Cum steps: 83947
+Rewards: 110.0
+Cum steps: 84593
+Rewards: 70.0
+Cum steps: 85139
+Rewards: 315.0
+Cum steps: 86205
+Rewards: 215.0
+Cum steps: 87104
+Rewards: 165.0
+Cum steps: 87986
+Rewards: 110.0
+Cum steps: 88855
+Rewards: 105.0
+Cum steps: 89233
+Rewards: 270.0
+Cum steps: 90352
+Rewards: 85.0
+Cum steps: 90901
+Rewards: 320.0
+Cum steps: 91651
+Rewards: 210.0
+Cum steps: 92422
+Rewards: 80.0
+Cum steps: 93012
+Rewards: 110.0
+Cum steps: 93540
+Rewards: 350.0
+Cum steps: 94746
+Rewards: 135.0
+Cum steps: 95479
+Rewards: 115.0
+Cum steps: 95986
+Rewards: 210.0
+Cum steps: 96817
+Rewards: 45.0
+Cum steps: 97206
+Rewards: 110.0
+Cum steps: 97769
+Rewards: 120.0
+Cum steps: 98374
+Rewards: 180.0
+Cum steps: 99187
+Rewards: 210.0
+Cum steps: 99878
+Rewards: 95.0
+Cum steps: 100563
+Rewards: 45.0
+Cum steps: 100902
+Rewards: 160.0
+Cum steps: 101585
+Rewards: 150.0
+Cum steps: 102272
+Rewards: 570.0
+Cum steps: 104207
+Rewards: 340.0
+Cum steps: 104966
+Rewards: 105.0
+Cum steps: 105643
+Rewards: 70.0
+Cum steps: 106043
+Rewards: 180.0
+Cum steps: 106822
+Rewards: 215.0
+Cum steps: 107767
+Rewards: 155.0
+Cum steps: 108388
+Rewards: 60.0
+Cum steps: 108952
+Rewards: 120.0
+Cum steps: 109633
+Rewards: 135.0
+Cum steps: 110334
+Rewards: 75.0
+Cum steps: 110707
+Rewards: 65.0
+Cum steps: 111157
+Rewards: 225.0
+Cum steps: 112064
+Rewards: 125.0
+Cum steps: 112849
+Rewards: 285.0
+Cum steps: 113912
+Rewards: 210.0
+Cum steps: 114715
+Rewards: 225.0
+Cum steps: 115907
+Rewards: 140.0
+Cum steps: 116477
+Rewards: 210.0
+Cum steps: 117139
+Rewards: 230.0
+Cum steps: 118118
+Rewards: 190.0
+Cum steps: 118765
+Rewards: 195.0
+Cum steps: 119598
+Rewards: 110.0
+Cum steps: 120273
+Rewards: 155.0
+Cum steps: 120911
+Rewards: 140.0
+Cum steps: 121405
+Rewards: 165.0
+Cum steps: 122074
+Rewards: 105.0
+Cum steps: 122575
+Rewards: 50.0
+Cum steps: 122954
+Rewards: 185.0
+Cum steps: 123714
+Rewards: 180.0
+Cum steps: 124485
+Rewards: 405.0
+Cum steps: 125822
+Rewards: 315.0
+Cum steps: 126924
+Rewards: 65.0
+Cum steps: 127559
+Rewards: 415.0
+Cum steps: 128613
+Rewards: 230.0
+Cum steps: 129781
+Rewards: 110.0
+Cum steps: 130466
+Rewards: 150.0
+Cum steps: 131171
+Rewards: 215.0
+Cum steps: 131861
+Rewards: 30.0
+Cum steps: 132254
+Rewards: 100.0
+Cum steps: 133249
+Rewards: 305.0
+Cum steps: 134171
+Rewards: 180.0
+Cum steps: 135225
+Rewards: 100.0
+Cum steps: 135807
+Rewards: 120.0
+Cum steps: 136250
+Rewards: 70.0
+Cum steps: 136869
+Rewards: 360.0
+Cum steps: 137691
+Rewards: 100.0
+Cum steps: 138062
+Rewards: 115.0
+Cum steps: 138652
+Rewards: 60.0
+Cum steps: 139095
+Rewards: 300.0
+Cum steps: 140150
+Rewards: 105.0
+Cum steps: 140539
+Rewards: 165.0
+Cum steps: 141236
+Rewards: 715.0
+Cum steps: 142681
+Rewards: 650.0
+Cum steps: 144211
+Rewards: 130.0
+Cum steps: 144884
+Rewards: 215.0
+Cum steps: 146063
+Rewards: 185.0
+Cum steps: 146838
+Rewards: 225.0
+Cum steps: 147787
+Rewards: 60.0
+Cum steps: 148311
+Rewards: 60.0
+Cum steps: 148845
+Rewards: 95.0
+Cum steps: 149215
+Rewards: 75.0
+Cum steps: 149592
+Rewards: 75.0
+Cum steps: 150089
+Rewards: 210.0
+Cum steps: 150898
+Rewards: 50.0
+Cum steps: 151281
+Rewards: 190.0
+Cum steps: 151944
+Rewards: 155.0
+Cum steps: 152597
+Rewards: 90.0
+Cum steps: 153002
+Rewards: 180.0
+Cum steps: 153731
+Rewards: 200.0
+Cum steps: 154551
+Rewards: 60.0
+Cum steps: 154896
+Rewards: 55.0
+Cum steps: 155262
+Rewards: 355.0
+Cum steps: 156055
+Rewards: 80.0
+Cum steps: 156532
+Rewards: 170.0
+Cum steps: 157152
+Rewards: 105.0
+Cum steps: 157525
+Rewards: 165.0
+Cum steps: 158033
+Rewards: 315.0
+Cum steps: 158816
+Rewards: 450.0
+Cum steps: 159765
+Rewards: 155.0
+Cum steps: 160494
+Rewards: 220.0
+Cum steps: 161471
+Rewards: 285.0
+Cum steps: 162440
+Rewards: 60.0
+Cum steps: 162944
+Rewards: 115.0
+Cum steps: 163490
+Rewards: 230.0
+Cum steps: 164384
+Rewards: 105.0
+Cum steps: 164970
+Rewards: 15.0
+Cum steps: 165502
+Rewards: 350.0
+Cum steps: 166638
+Rewards: 245.0
+Cum steps: 167801
+Rewards: 345.0
+Cum steps: 168952
+Rewards: 110.0
+Cum steps: 169699
+Rewards: 125.0
+Cum steps: 170334
+Rewards: 150.0
+Cum steps: 170965
+Rewards: 545.0
+Cum steps: 172194
+Rewards: 115.0
+Cum steps: 172874
+Rewards: 225.0
+Cum steps: 173735
+Rewards: 90.0
+Cum steps: 174364
+Rewards: 235.0
+Cum steps: 175051
+Rewards: 285.0
+Cum steps: 176281
+Rewards: 50.0
+Cum steps: 176653
+Rewards: 55.0
+Cum steps: 177094
+Rewards: 120.0
+Cum steps: 177701
+Rewards: 185.0
+Cum steps: 178341
+Rewards: 55.0
+Cum steps: 178759
+Rewards: 235.0
+Cum steps: 179608
+Rewards: 140.0
+Cum steps: 180367
+Rewards: 180.0
+Cum steps: 181198
+Rewards: 20.0
+Cum steps: 181524
+Rewards: 140.0
+Cum steps: 182124
+Rewards: 55.0
+Cum steps: 182494
+Rewards: 140.0
+Cum steps: 183273
+Rewards: 220.0
+Cum steps: 183922
+Rewards: 125.0
+Cum steps: 184605
+Rewards: 55.0
+Cum steps: 184989
+Rewards: 165.0
+Cum steps: 185664
+Rewards: 45.0
+Cum steps: 186046
+Rewards: 155.0
+Cum steps: 186752
+Rewards: 460.0
+Cum steps: 187777
+Rewards: 55.0
+Cum steps: 188167
+Rewards: 60.0
+Cum steps: 188539
+Rewards: 120.0
+Cum steps: 189063
+Rewards: 160.0
+Cum steps: 189621
+Rewards: 125.0
+Cum steps: 190264
+Rewards: 130.0
+Cum steps: 190887
+Rewards: 55.0
+Cum steps: 191500
+Rewards: 385.0
+Cum steps: 192604
+Rewards: 95.0
+Cum steps: 193287
+Rewards: 460.0
+Cum steps: 194257
+Rewards: 85.0
+Cum steps: 194738
+Rewards: 45.0
+Cum steps: 195085
+Rewards: 260.0
+Cum steps: 195822
+Rewards: 505.0
+Cum steps: 196821
+Rewards: 110.0
+Cum steps: 197230
+Rewards: 270.0
+Cum steps: 198107
+Rewards: 70.0
+Cum steps: 198504
+Rewards: 245.0
+Cum steps: 199359
+Rewards: 125.0
+Cum steps: 199924
+Rewards: 370.0
+Cum steps: 200731
+Rewards: 140.0
+Cum steps: 201330
+Rewards: 105.0
+Cum steps: 201720
+Rewards: 125.0
+Cum steps: 202394
+Rewards: 30.0
+Cum steps: 202783
+Rewards: 370.0
+Cum steps: 203827
+Rewards: 395.0
+Cum steps: 204819
+Rewards: 80.0
+Cum steps: 205360
+Rewards: 75.0
+Cum steps: 205889
+Rewards: 350.0
+Cum steps: 206850
+Rewards: 50.0
+Cum steps: 207390
+Rewards: 60.0
+Cum steps: 207849
+Rewards: 220.0
+Cum steps: 208550
+Rewards: 250.0
+Cum steps: 209455
+Rewards: 115.0
+Cum steps: 210121
+Rewards: 420.0
+Cum steps: 211383
+Rewards: 130.0
+Cum steps: 212041
+Rewards: 105.0
+Cum steps: 212648
+Rewards: 100.0
+Cum steps: 213415
+Rewards: 175.0
+Cum steps: 214062
+Rewards: 135.0
+Cum steps: 214690
+Rewards: 140.0
+Cum steps: 215467
+Rewards: 215.0
+Cum steps: 216390
+Rewards: 260.0
+Cum steps: 217436
+Rewards: 200.0
+Cum steps: 218113
+Rewards: 100.0
+Cum steps: 218903
+Rewards: 165.0
+Cum steps: 219556
+Rewards: 190.0
+Cum steps: 220185
+Rewards: 100.0
+Cum steps: 220702
+Rewards: 320.0
+Cum steps: 221731
+Rewards: 615.0
+Cum steps: 222930
+Rewards: 150.0
+Cum steps: 223738
+Rewards: 110.0
+Cum steps: 224273
+Rewards: 65.0
+Cum steps: 224616
+Rewards: 110.0
+Cum steps: 225303
+Rewards: 155.0
+Cum steps: 225953
+Rewards: 50.0
+Cum steps: 226527
+Rewards: 180.0
+Cum steps: 227446
+Rewards: 110.0
+Cum steps: 228125
+Rewards: 135.0
+Cum steps: 228706
+Rewards: 345.0
+Cum steps: 229944
+Rewards: 155.0
+Cum steps: 230659
+Rewards: 155.0
+Cum steps: 231472
+Rewards: 120.0
+Cum steps: 232130
+Rewards: 90.0
+Cum steps: 232512
+Rewards: 125.0
+Cum steps: 233076
+Rewards: 265.0
+Cum steps: 234004
+Rewards: 180.0
+Cum steps: 234720
+Rewards: 110.0
+Cum steps: 235253
+Rewards: 110.0
+Cum steps: 235940
+Rewards: 125.0
+Cum steps: 236587
+Rewards: 200.0
+Cum steps: 237204
+Rewards: 110.0
+Cum steps: 237821
+Rewards: 85.0
+Cum steps: 238320
+Rewards: 195.0
+Cum steps: 239147
+Rewards: 25.0
+Cum steps: 239501
+Rewards: 75.0
+Cum steps: 240105
+Rewards: 45.0
+Cum steps: 240494
+Rewards: 30.0
+Cum steps: 241101
+Rewards: 270.0
+Cum steps: 241983
+Rewards: 180.0
+Cum steps: 242660
+Rewards: 80.0
+Cum steps: 243174
+Rewards: 170.0
+Cum steps: 244153
+Rewards: 175.0
+Cum steps: 244872
+Rewards: 135.0
+Cum steps: 245607
+Rewards: 495.0
+Cum steps: 246878
+Rewards: 70.0
+Cum steps: 247387
+Rewards: 80.0
+Cum steps: 247868
+Rewards: 190.0
+Cum steps: 248822
+Rewards: 110.0
+Cum steps: 249341
+Rewards: 220.0
+Cum steps: 250042
+Rewards: 15.0
+Cum steps: 250431
+Rewards: 515.0
+Cum steps: 251400
+Rewards: 105.0
+Cum steps: 252049
+Rewards: 195.0
+Cum steps: 252846
+Rewards: 205.0
+Cum steps: 253339
+Rewards: 125.0
+Cum steps: 254176
+Rewards: 80.0
+Cum steps: 254604
+Rewards: 160.0
+Cum steps: 255255
+Rewards: 65.0
+Cum steps: 255746
+Rewards: 85.0
+Cum steps: 256356
+Rewards: 5.0
+Cum steps: 256885
+Rewards: 80.0
+Cum steps: 257372
+Rewards: 250.0
+Cum steps: 258508
+Rewards: 160.0
+Cum steps: 259210
+Rewards: 445.0
+Cum steps: 260325
+Rewards: 110.0
+Cum steps: 261032
+Rewards: 35.0
+Cum steps: 261427
+Rewards: 125.0
+Cum steps: 262054
+Rewards: 230.0
+Cum steps: 263092
+Rewards: 155.0
+Cum steps: 263619
+Rewards: 410.0
+Cum steps: 264552
+Rewards: 125.0
+Cum steps: 265158
+Rewards: 65.0
+Cum steps: 265505
+Rewards: 270.0
+Cum steps: 266563
+Rewards: 170.0
+Cum steps: 267238
+Rewards: 65.0
+Cum steps: 267787
+Rewards: 190.0
+Cum steps: 268456
+Rewards: 155.0
+Cum steps: 269315
+Rewards: 60.0
+Cum steps: 269694
+Rewards: 80.0
+Cum steps: 270145
+Rewards: 120.0
+Cum steps: 270748
+Rewards: 185.0
+Cum steps: 271518
+Rewards: 550.0
+Cum steps: 272469
+Rewards: 275.0
+Cum steps: 273468
+Rewards: 205.0
+Cum steps: 274285
+Rewards: 180.0
+Cum steps: 274944
+Rewards: 320.0
+Cum steps: 275894
+Rewards: 115.0
+Cum steps: 276517
+Rewards: 80.0
+Cum steps: 276910
+Rewards: 240.0
+Cum steps: 277921
+Rewards: 105.0
+Cum steps: 278560
+Rewards: 55.0
+Cum steps: 279249
+Rewards: 120.0
+Cum steps: 279783
+Rewards: 155.0
+Cum steps: 280433
+Rewards: 260.0
+Cum steps: 281450
+Rewards: 125.0
+Cum steps: 282091
+Rewards: 145.0
+Cum steps: 282823
+Rewards: 170.0
+Cum steps: 283505
+Rewards: 150.0
+Cum steps: 284146
+Rewards: 165.0
+Cum steps: 284833
+Rewards: 90.0
+Cum steps: 285388
+Rewards: 275.0
+Cum steps: 286497
+Rewards: 285.0
+Cum steps: 287440
+Rewards: 205.0
+Cum steps: 288335
+Rewards: 440.0
+Cum steps: 289243
+Rewards: 420.0
+Cum steps: 290244
+Rewards: 35.0
+Cum steps: 290600
+Rewards: 110.0
+Cum steps: 291672
+Rewards: 80.0
+Cum steps: 292037
+Rewards: 120.0
+Cum steps: 292548
+Rewards: 300.0
+Cum steps: 293743
+Rewards: 65.0
+Cum steps: 294122
+Rewards: 175.0
+Cum steps: 295208
+Rewards: 70.0
+Cum steps: 295731
+Rewards: 95.0
+Cum steps: 296350
+Rewards: 190.0
+Cum steps: 297413
+Rewards: 255.0
+Cum steps: 298221
+Rewards: 260.0
+Cum steps: 299257
+Rewards: 135.0
+Cum steps: 299962
+Rewards: 150.0
+Cum steps: 300842
+Rewards: 130.0
+Cum steps: 301463
+Rewards: 25.0
+Cum steps: 302060
+Rewards: 35.0
+Cum steps: 302491
+Rewards: 115.0
+Cum steps: 303186
+Rewards: 30.0
+Cum steps: 303607
+Rewards: 210.0
+Cum steps: 304397
+Rewards: 80.0
+Cum steps: 304864
+Rewards: 200.0
+Cum steps: 305783
+Rewards: 315.0
+Cum steps: 306687
+Rewards: 150.0
+Cum steps: 307638
+Rewards: 150.0
+Cum steps: 308502
+Rewards: 50.0
+Cum steps: 309017
+Rewards: 125.0
+Cum steps: 309732
+Rewards: 155.0
+Cum steps: 310507
+Rewards: 185.0
+Cum steps: 311173
+Rewards: 150.0
+Cum steps: 311694
+Rewards: 230.0
+Cum steps: 312688
+Rewards: 130.0
+Cum steps: 313221
+Rewards: 60.0
+Cum steps: 313610
+Rewards: 90.0
+Cum steps: 314103
+Rewards: 370.0
+Cum steps: 315392
+Rewards: 505.0
+Cum steps: 316335
+Rewards: 65.0
+Cum steps: 316804
+Rewards: 80.0
+Cum steps: 317425
+Rewards: 225.0
+Cum steps: 318335
+Rewards: 55.0
+Cum steps: 318732
+Rewards: 50.0
+Cum steps: 319246
+Rewards: 120.0
+Cum steps: 320172
+Rewards: 80.0
+Cum steps: 320618
+Rewards: 45.0
+Cum steps: 321001
+Rewards: 50.0
+Cum steps: 321485
+Rewards: 105.0
+Cum steps: 322070
+Rewards: 80.0
+Cum steps: 322771
+Rewards: 135.0
+Cum steps: 323476
+Rewards: 235.0
+Cum steps: 324199
+Rewards: 470.0
+Cum steps: 325178
+Rewards: 120.0
+Cum steps: 325810
+Rewards: 90.0
+Cum steps: 326326
+Rewards: 220.0
+Cum steps: 327107
+Rewards: 190.0
+Cum steps: 327766
+Rewards: 430.0
+Cum steps: 328735
+Rewards: 220.0
+Cum steps: 329491
+Rewards: 155.0
+Cum steps: 330005
+Rewards: 260.0
+Cum steps: 330882
+Rewards: 75.0
+Cum steps: 331261
+Rewards: 115.0
+Cum steps: 331771
+Rewards: 160.0
+Cum steps: 332676
+Rewards: 225.0
+Cum steps: 333333
+Rewards: 60.0
+Cum steps: 333688
+Rewards: 25.0
+Cum steps: 334071
+Rewards: 55.0
+Cum steps: 334430
+Rewards: 30.0
+Cum steps: 334759
+Rewards: 125.0
+Cum steps: 335484
+Rewards: 585.0
+Cum steps: 336361
+Rewards: 95.0
+Cum steps: 336885
+Rewards: 200.0
+Cum steps: 337854
+Rewards: 180.0
+Cum steps: 338560
+Rewards: 365.0
+Cum steps: 339610
+Rewards: 100.0
+Cum steps: 340218
+Rewards: 195.0
+Cum steps: 341175
+Rewards: 490.0
+Cum steps: 342346
+Rewards: 110.0
+Cum steps: 342871
+Rewards: 110.0
+Cum steps: 343544
+Rewards: 115.0
+Cum steps: 344205
+Rewards: 50.0
+Cum steps: 344748
+Rewards: 55.0
+Cum steps: 345271
+Rewards: 360.0
+Cum steps: 346265
+Rewards: 50.0
+Cum steps: 346783
+Rewards: 90.0
+Cum steps: 347293
+Rewards: 280.0
+Cum steps: 348461
+Rewards: 45.0
+Cum steps: 348942
+Rewards: 85.0
+Cum steps: 349773
+Rewards: 120.0
+Cum steps: 350454
+Rewards: 110.0
+Cum steps: 351024
+Rewards: 135.0
+Cum steps: 351525
+Rewards: 90.0
+Cum steps: 352154
+Rewards: 135.0
+Cum steps: 352681
+Rewards: 135.0
+Cum steps: 353274
+Rewards: 490.0
+Cum steps: 354544
+Rewards: 20.0
+Cum steps: 354881
+Rewards: 160.0
+Cum steps: 355796
+Rewards: 180.0
+Cum steps: 356661
+Rewards: 260.0
+Cum steps: 357953
+Rewards: 75.0
+Cum steps: 358480
+Rewards: 390.0
+Cum steps: 359777
+Rewards: 65.0
+Cum steps: 360242
+Rewards: 430.0
+Cum steps: 361197
+Rewards: 220.0
+Cum steps: 362012
+Rewards: 135.0
+Cum steps: 362570
+Rewards: 100.0
+Cum steps: 363271
+Rewards: 55.0
+Cum steps: 363728
+Rewards: 200.0
+Cum steps: 365031
+Rewards: 180.0
+Cum steps: 365884
+Rewards: 230.0
+Cum steps: 366854
+Rewards: 350.0
+Cum steps: 367825
+Rewards: 320.0
+Cum steps: 368766
+Rewards: 130.0
+Cum steps: 369542
+Rewards: 120.0
+Cum steps: 370244
+Rewards: 130.0
+Cum steps: 370861
+Rewards: 365.0
+Cum steps: 372029
+Rewards: 255.0
+Cum steps: 373050
+Rewards: 125.0
+Cum steps: 373658
+Rewards: 120.0
+Cum steps: 374183
+Rewards: 260.0
+Cum steps: 375252
+Rewards: 30.0
+Cum steps: 375638
+Rewards: 135.0
+Cum steps: 376321
+Rewards: 50.0
+Cum steps: 376820
+Rewards: 180.0
+Cum steps: 377751
+Rewards: 120.0
+Cum steps: 378391
+Rewards: 70.0
+Cum steps: 378906
+Rewards: 210.0
+Cum steps: 379731
+Rewards: 135.0
+Cum steps: 380400
+Rewards: 50.0
+Cum steps: 380832
+Rewards: 300.0
+Cum steps: 381701
+Rewards: 185.0
+Cum steps: 382664
+Rewards: 255.0
+Cum steps: 383733
+Rewards: 165.0
+Cum steps: 384476
+Rewards: 155.0
+Cum steps: 385252
+Rewards: 425.0
+Cum steps: 386083
+Rewards: 370.0
+Cum steps: 387029
+Rewards: 75.0
+Cum steps: 387535
+Rewards: 100.0
+Cum steps: 388048
+Rewards: 325.0
+Cum steps: 389037
+Rewards: 65.0
+Cum steps: 389562
+Rewards: 60.0
+Cum steps: 390082
+Rewards: 280.0
+Cum steps: 391203
+Rewards: 105.0
+Cum steps: 391690
+Rewards: 155.0
+Cum steps: 392574
+Rewards: 105.0
+Cum steps: 393202
+Rewards: 65.0
+Cum steps: 393807
+Rewards: 205.0
+Cum steps: 394778
+Rewards: 150.0
+Cum steps: 395223
+Rewards: 65.0
+Cum steps: 395868
+Rewards: 115.0
+Cum steps: 396517
+Rewards: 165.0
+Cum steps: 397326
+Rewards: 475.0
+Cum steps: 398198
+Rewards: 30.0
+Cum steps: 398676
+Rewards: 190.0
+Cum steps: 399445
+Rewards: 670.0
+Cum steps: 400460
+Rewards: 135.0
+Cum steps: 400982
+Rewards: 85.0
+Cum steps: 401597
+Rewards: 260.0
+Cum steps: 402463
+Rewards: 155.0
+Cum steps: 403170
+Rewards: 20.0
+Cum steps: 403682
+Rewards: 515.0
+Cum steps: 404652
+Rewards: 80.0
+Cum steps: 405052
+Rewards: 95.0
+Cum steps: 405687
+Rewards: 100.0
+Cum steps: 406358
+Rewards: 240.0
+Cum steps: 407227
+Rewards: 65.0
+Cum steps: 407622
+Rewards: 125.0
+Cum steps: 408426
+Rewards: 45.0
+Cum steps: 408807
+Rewards: 95.0
+Cum steps: 409291
+Rewards: 190.0
+Cum steps: 410506
+Rewards: 50.0
+Cum steps: 410889
+Rewards: 135.0
+Cum steps: 411514
+Rewards: 285.0
+Cum steps: 412241
+Rewards: 345.0
+Cum steps: 413105
+Rewards: 125.0
+Cum steps: 413922
+Rewards: 105.0
+Cum steps: 414302
+Rewards: 275.0
+Cum steps: 414981
+Rewards: 30.0
+Cum steps: 415552
+Rewards: 80.0
+Cum steps: 416252
+Rewards: 65.0
+Cum steps: 416639
+Rewards: 105.0
+Cum steps: 417314
+Rewards: 50.0
+Cum steps: 417837
+Rewards: 200.0
+Cum steps: 418666
+Rewards: 135.0
+Cum steps: 419333
+Rewards: 135.0
+Cum steps: 419731
+Rewards: 80.0
+Cum steps: 420259
+Rewards: 180.0
+Cum steps: 420948
+Rewards: 140.0
+Cum steps: 421418
+Rewards: 245.0
+Cum steps: 422300
+Rewards: 280.0
+Cum steps: 423359
+Rewards: 35.0
+Cum steps: 423782
+Rewards: 130.0
+Cum steps: 424487
+Rewards: 10.0
+Cum steps: 424952
+Rewards: 45.0
+Cum steps: 425325
+Rewards: 120.0
+Cum steps: 426299
+Rewards: 185.0
+Cum steps: 427252
+Rewards: 50.0
+Cum steps: 427659
+Rewards: 150.0
+Cum steps: 428396
+Rewards: 355.0
+Cum steps: 429321
+Rewards: 195.0
+Cum steps: 430270
+Rewards: 340.0
+Cum steps: 431250
+Rewards: 20.0
+Cum steps: 431785
+Rewards: 170.0
+Cum steps: 432404
+Rewards: 155.0
+Cum steps: 433113
+Rewards: 75.0
+Cum steps: 433503
+Rewards: 90.0
+Cum steps: 434152
+Rewards: 155.0
+Cum steps: 434892
+Rewards: 80.0
+Cum steps: 435322
+Rewards: 280.0
+Cum steps: 436341
+Rewards: 470.0
+Cum steps: 437118
+Rewards: 155.0
+Cum steps: 438242
+Rewards: 260.0
+Cum steps: 439235
+Rewards: 355.0
+Cum steps: 440082
+Rewards: 105.0
+Cum steps: 440641
+Rewards: 385.0
+Cum steps: 441694
+Rewards: 230.0
+Cum steps: 442556
+Rewards: 90.0
+Cum steps: 442957
+Rewards: 215.0
+Cum steps: 443655
+Rewards: 80.0
+Cum steps: 444291
+Rewards: 370.0
+Cum steps: 445690
+Rewards: 135.0
+Cum steps: 446327
+Rewards: 400.0
+Cum steps: 447378
+Rewards: 110.0
+Cum steps: 448179
+Rewards: 245.0
+Cum steps: 449188
+Rewards: 130.0
+Cum steps: 449780
+Rewards: 155.0
+Cum steps: 450279
+Rewards: 160.0
+Cum steps: 450993
+Rewards: 210.0
+Cum steps: 451806
+Rewards: 100.0
+Cum steps: 452485
+Rewards: 115.0
+Cum steps: 453201
+Rewards: 285.0
+Cum steps: 453952
+Rewards: 50.0
+Cum steps: 454299
+Rewards: 120.0
+Cum steps: 454790
+Rewards: 210.0
+Cum steps: 455725
+Rewards: 210.0
+Cum steps: 456358
+Rewards: 135.0
+Cum steps: 457039
+Rewards: 105.0
+Cum steps: 457710
+Rewards: 285.0
+Cum steps: 458807
+Rewards: 120.0
+Cum steps: 459547
+Rewards: 175.0
+Cum steps: 460414
+Rewards: 460.0
+Cum steps: 461163
+Rewards: 235.0
+Cum steps: 462103
+Rewards: 180.0
+Cum steps: 463027
+Rewards: 120.0
+Cum steps: 463590
+Rewards: 340.0
+Cum steps: 464467
+Rewards: 410.0
+Cum steps: 465462
+Rewards: 125.0
+Cum steps: 466063
+Rewards: 235.0
+Cum steps: 466930
+Rewards: 120.0
+Cum steps: 467670
+Rewards: 85.0
+Cum steps: 468184
+Rewards: 165.0
+Cum steps: 468825
+Rewards: 175.0
+Cum steps: 469488
+Rewards: 60.0
+Cum steps: 469981
+Rewards: 260.0
+Cum steps: 470873
+Rewards: 130.0
+Cum steps: 471566
+Rewards: 145.0
+Cum steps: 472687
+Rewards: 140.0
+Cum steps: 473364
+Rewards: 20.0
+Cum steps: 473845
+Rewards: 120.0
+Cum steps: 474371
+Rewards: 110.0
+Cum steps: 474975
+Rewards: 255.0
+Cum steps: 475890
+Rewards: 120.0
+Cum steps: 476609
+Rewards: 230.0
+Cum steps: 477435
+Rewards: 290.0
+Cum steps: 478297
+Rewards: 175.0
+Cum steps: 479495
+Rewards: 45.0
+Cum steps: 479875
+Rewards: 60.0
+Cum steps: 480366
+Rewards: 195.0
+Cum steps: 481328
+Rewards: 215.0
+Cum steps: 482133
+Rewards: 140.0
+Cum steps: 482804
+Rewards: 75.0
+Cum steps: 483191
+Rewards: 120.0
+Cum steps: 483901
+Rewards: 400.0
+Cum steps: 484973
+Rewards: 315.0
+Cum steps: 486251
+Rewards: 150.0
+Cum steps: 486932
+Rewards: 135.0
+Cum steps: 487860
+Rewards: 135.0
+Cum steps: 488625
+Rewards: 165.0
+Cum steps: 489292
+Rewards: 35.0
+Cum steps: 489819
+Rewards: 330.0
+Cum steps: 490713
+Rewards: 140.0
+Cum steps: 491204
+Rewards: 180.0
+Cum steps: 492178
+Rewards: 135.0
+Cum steps: 492644
+Rewards: 175.0
+Cum steps: 493436
+Rewards: 190.0
+Cum steps: 494223
+Rewards: 310.0
+Cum steps: 495256
+Rewards: 195.0
+Cum steps: 496056
+Rewards: 255.0
+Cum steps: 496825
+Rewards: 490.0
+Cum steps: 497997
+Rewards: 335.0
+Cum steps: 499134
+Rewards: 295.0
+Cum steps: 500499
+Rewards: 185.0
+Cum steps: 501524
+Rewards: 185.0
+Cum steps: 502239
+Rewards: 125.0
+Cum steps: 503040
+Rewards: 220.0
+Cum steps: 503925
+Rewards: 110.0
+Cum steps: 504500
+Rewards: 55.0
+Cum steps: 504935
+Rewards: 160.0
+Cum steps: 505640
+Rewards: 165.0
+Cum steps: 506303
+Rewards: 40.0
+Cum steps: 506868
+Rewards: 380.0
+Cum steps: 507693
+Rewards: 125.0
+Cum steps: 508373
+Rewards: 110.0
+Cum steps: 509013
+Rewards: 385.0
+Cum steps: 510183
+Rewards: 195.0
+Cum steps: 511125
+Rewards: 125.0
+Cum steps: 511632
+Rewards: 490.0
+Cum steps: 512623
+Rewards: 140.0
+Cum steps: 513270
+Rewards: 65.0
+Cum steps: 513792
+Rewards: 395.0
+Cum steps: 514678
+Rewards: 310.0
+Cum steps: 515333
+Rewards: 70.0
+Cum steps: 515832
+Rewards: 180.0
+Cum steps: 516773
+Rewards: 110.0
+Cum steps: 517286
+Rewards: 110.0
+Cum steps: 517852
+Rewards: 280.0
+Cum steps: 519144
+Rewards: 130.0
+Cum steps: 519785
+Rewards: 355.0
+Cum steps: 520816
+Rewards: 95.0
+Cum steps: 521332
+Rewards: 295.0
+Cum steps: 522296
+Rewards: 120.0
+Cum steps: 522943
+Rewards: 170.0
+Cum steps: 523636
+Rewards: 15.0
+Cum steps: 524020
+Rewards: 535.0
+Cum steps: 525135
+Rewards: 295.0
+Cum steps: 525765
+Rewards: 400.0
+Cum steps: 526473
+Rewards: 65.0
+Cum steps: 527032
+Rewards: 275.0
+Cum steps: 527903
+Rewards: 245.0
+Cum steps: 528812
+Rewards: 300.0
+Cum steps: 529869
+Rewards: 120.0
+Cum steps: 530523
+Rewards: 410.0
+Cum steps: 531470
+Rewards: 185.0
+Cum steps: 532287
+Rewards: 235.0
+Cum steps: 533122
+Rewards: 255.0
+Cum steps: 534097
+Rewards: 35.0
+Cum steps: 534628
+Rewards: 45.0
+Cum steps: 535189
+Rewards: 105.0
+Cum steps: 535586
+Rewards: 260.0
+Cum steps: 536529
+Rewards: 50.0
+Cum steps: 536890
+Rewards: 290.0
+Cum steps: 537843
+Rewards: 105.0
+Cum steps: 538247
+Rewards: 120.0
+Cum steps: 538924
+Rewards: 440.0
+Cum steps: 539924
+Rewards: 330.0
+Cum steps: 541260
+Rewards: 175.0
+Cum steps: 542407
+Rewards: 425.0
+Cum steps: 543534
+Rewards: 165.0
+Cum steps: 544191
+Rewards: 85.0
+Cum steps: 544846
+Rewards: 225.0
+Cum steps: 545547
+Rewards: 220.0
+Cum steps: 546514
+Rewards: 565.0
+Cum steps: 547549
+Rewards: 255.0
+Cum steps: 548362
+Rewards: 435.0
+Cum steps: 549421
+Rewards: 130.0
+Cum steps: 550278
+Rewards: 295.0
+Cum steps: 551252
+Rewards: 180.0
+Cum steps: 551969
+Rewards: 110.0
+Cum steps: 552586
+Rewards: 135.0
+Cum steps: 553049
+Rewards: 550.0
+Cum steps: 553966
+Rewards: 555.0
+Cum steps: 555725
+Rewards: 255.0
+Cum steps: 556814
+Rewards: 160.0
+Cum steps: 557472
+Rewards: 110.0
+Cum steps: 557943
+Rewards: 410.0
+Cum steps: 558912
+Rewards: 180.0
+Cum steps: 559715
+Rewards: 185.0
+Cum steps: 560514
+Rewards: 185.0
+Cum steps: 561203
+Rewards: 230.0
+Cum steps: 562209
+Rewards: 135.0
+Cum steps: 562721
+Rewards: 170.0
+Cum steps: 563726
+Rewards: 235.0
+Cum steps: 564859
+Rewards: 210.0
+Cum steps: 565815
+Rewards: 380.0
+Cum steps: 566647
+Rewards: 415.0
+Cum steps: 567869
+Rewards: 80.0
+Cum steps: 568493
+Rewards: 110.0
+Cum steps: 569167
+Rewards: 155.0
+Cum steps: 570056
+Rewards: 340.0
+Cum steps: 571147
+Rewards: 165.0
+Cum steps: 571897
+Rewards: 210.0
+Cum steps: 572728
+Rewards: 195.0
+Cum steps: 573665
+Rewards: 105.0
+Cum steps: 574286
+Rewards: 255.0
+Cum steps: 575154
+Rewards: 215.0
+Cum steps: 575969
+Rewards: 325.0
+Cum steps: 576971
+Rewards: 390.0
+Cum steps: 578118
+Rewards: 120.0
+Cum steps: 578730
+Rewards: 590.0
+Cum steps: 579783
+Rewards: 60.0
+Cum steps: 580279
+Rewards: 315.0
+Cum steps: 581232
+Rewards: 80.0
+Cum steps: 581744
+Rewards: 125.0
+Cum steps: 582223
+Rewards: 120.0
+Cum steps: 582742
+Rewards: 120.0
+Cum steps: 583253
+Rewards: 120.0
+Cum steps: 583926
+Rewards: 255.0
+Cum steps: 584972
+Rewards: 225.0
+Cum steps: 585786
+Rewards: 205.0
+Cum steps: 586573
+Rewards: 50.0
+Cum steps: 587094
+Rewards: 180.0
+Cum steps: 587891
+Rewards: 215.0
+Cum steps: 588610
+Rewards: 105.0
+Cum steps: 589071
+Rewards: 140.0
+Cum steps: 589688
+Rewards: 155.0
+Cum steps: 590218
+Rewards: 345.0
+Cum steps: 591135
+Rewards: 155.0
+Cum steps: 591783
+Rewards: 230.0
+Cum steps: 592746
+Rewards: 150.0
+Cum steps: 593408
+Rewards: 210.0
+Cum steps: 594029
+Rewards: 150.0
+Cum steps: 594834
+Rewards: 220.0
+Cum steps: 595649
+Rewards: 315.0
+Cum steps: 596804
+Rewards: 50.0
+Cum steps: 597225
+Rewards: 190.0
+Cum steps: 598013
+Rewards: 415.0
+Cum steps: 598834
+Rewards: 250.0
+Cum steps: 599511
+Rewards: 140.0
+Cum steps: 600295
+Rewards: 185.0
+Cum steps: 600982
+Rewards: 285.0
+Cum steps: 602089
+Rewards: 215.0
+Cum steps: 602858
+Rewards: 350.0
+Cum steps: 603889
+Rewards: 255.0
+Cum steps: 604989
+Rewards: 265.0
+Cum steps: 606007
+Rewards: 220.0
+Cum steps: 606730
+Rewards: 190.0
+Cum steps: 607409
+Rewards: 270.0
+Cum steps: 608245
+Rewards: 535.0
+Cum steps: 609318
+Rewards: 285.0
+Cum steps: 610140
+Rewards: 230.0
+Cum steps: 611108
+Rewards: 85.0
+Cum steps: 611813
+Rewards: 30.0
+Cum steps: 612247
+Rewards: 325.0
+Cum steps: 613258
+Rewards: 120.0
+Cum steps: 614057
+Rewards: 190.0
+Cum steps: 614969
+Rewards: 240.0
+Cum steps: 615959
+Rewards: 205.0
+Cum steps: 616793
+Rewards: 385.0
+Cum steps: 618149
+Rewards: 605.0
+Cum steps: 619283
+Rewards: 130.0
+Cum steps: 619828
+Rewards: 105.0
+Cum steps: 620379
+Rewards: 355.0
+Cum steps: 621315
+Rewards: 230.0
+Cum steps: 622132
+Rewards: 290.0
+Cum steps: 623229
+Rewards: 275.0
+Cum steps: 624268
+Rewards: 395.0
+Cum steps: 625138
+Rewards: 180.0
+Cum steps: 625803
+Rewards: 40.0
+Cum steps: 626229
+Rewards: 125.0
+Cum steps: 626863
+Rewards: 280.0
+Cum steps: 627924
+Rewards: 220.0
+Cum steps: 628911
+Rewards: 470.0
+Cum steps: 629906
+Rewards: 195.0
+Cum steps: 630540
+Rewards: 185.0
+Cum steps: 631347
+Rewards: 195.0
+Cum steps: 632117
+Rewards: 170.0
+Cum steps: 632785
+Rewards: 230.0
+Cum steps: 633846
+Rewards: 275.0
+Cum steps: 634635
+Rewards: 160.0
+Cum steps: 635582
+Rewards: 185.0
+Cum steps: 636272
+Rewards: 65.0
+Cum steps: 636960
+Rewards: 35.0
+Cum steps: 637353
+Rewards: 230.0
+Cum steps: 638374
+Rewards: 235.0
+Cum steps: 639344
+Rewards: 60.0
+Cum steps: 639841
+Rewards: 225.0
+Cum steps: 640644
+Rewards: 200.0
+Cum steps: 641381
+Rewards: 380.0
+Cum steps: 642518
+Rewards: 220.0
+Cum steps: 643475
+Rewards: 235.0
+Cum steps: 644213
+Rewards: 170.0
+Cum steps: 644846
+Rewards: 75.0
+Cum steps: 645326
+Rewards: 265.0
+Cum steps: 646131
+Rewards: 135.0
+Cum steps: 646945
+Rewards: 460.0
+Cum steps: 648031
+Rewards: 250.0
+Cum steps: 648828
+Rewards: 215.0
+Cum steps: 649712
+Rewards: 225.0
+Cum steps: 650759
+Rewards: 120.0
+Cum steps: 651462
+Rewards: 445.0
+Cum steps: 652303
+Rewards: 115.0
+Cum steps: 652953
+Rewards: 90.0
+Cum steps: 653619
+Rewards: 260.0
+Cum steps: 654376
+Rewards: 105.0
+Cum steps: 654795
+Rewards: 170.0
+Cum steps: 655517
+Rewards: 225.0
+Cum steps: 656522
+Rewards: 110.0
+Cum steps: 656931
+Rewards: 125.0
+Cum steps: 657566
+Rewards: 120.0
+Cum steps: 658360
+Rewards: 330.0
+Cum steps: 659340
+Rewards: 185.0
+Cum steps: 660113
+Rewards: 375.0
+Cum steps: 661052
+Rewards: 205.0
+Cum steps: 661843
+Rewards: 185.0
+Cum steps: 662566
+Rewards: 135.0
+Cum steps: 663085
+Rewards: 120.0
+Cum steps: 663594
+Rewards: 225.0
+Cum steps: 664509
+Rewards: 135.0
+Cum steps: 665134
+Rewards: 130.0
+Cum steps: 666174
+Rewards: 145.0
+Cum steps: 666715
+Rewards: 430.0
+Cum steps: 668107
+Rewards: 165.0
+Cum steps: 668900
+Rewards: 155.0
+Cum steps: 669674
+Rewards: 410.0
+Cum steps: 670960
+Rewards: 365.0
+Cum steps: 672228
+Rewards: 715.0
+Cum steps: 673368
+Rewards: 250.0
+Cum steps: 674653
+Rewards: 195.0
+Cum steps: 675439
+Rewards: 315.0
+Cum steps: 676613
+Rewards: 515.0
+Cum steps: 677646
+Rewards: 480.0
+Cum steps: 679019
+Rewards: 120.0
+Cum steps: 679917
+Rewards: 185.0
+Cum steps: 680587
+Rewards: 360.0
+Cum steps: 681511
+Rewards: 340.0
+Cum steps: 682200
+Rewards: 310.0
+Cum steps: 683304
+Rewards: 230.0
+Cum steps: 684093
+Rewards: 100.0
+Cum steps: 684754
+Rewards: 100.0
+Cum steps: 685235
+Rewards: 255.0
+Cum steps: 686172
+Rewards: 190.0
+Cum steps: 686979
+Rewards: 140.0
+Cum steps: 687626
+Rewards: 140.0
+Cum steps: 688213
+Rewards: 210.0
+Cum steps: 689007
+Rewards: 360.0
+Cum steps: 690312
+Rewards: 105.0
+Cum steps: 690852
+Rewards: 130.0
+Cum steps: 691507
+Rewards: 155.0
+Cum steps: 692290
+Rewards: 215.0
+Cum steps: 693099
+Rewards: 85.0
+Cum steps: 693660
+Rewards: 110.0
+Cum steps: 694110
+Rewards: 70.0
+Cum steps: 694615
+Rewards: 145.0
+Cum steps: 695302
+Rewards: 250.0
+Cum steps: 696062
+Rewards: 140.0
+Cum steps: 696854
+Rewards: 160.0
+Cum steps: 697480
+Rewards: 145.0
+Cum steps: 698257
+Rewards: 140.0
+Cum steps: 698952
+Rewards: 100.0
+Cum steps: 699455
+Rewards: 140.0
+Cum steps: 700129
+Rewards: 70.0
+Cum steps: 700642
+Rewards: 260.0
+Cum steps: 701512
+Rewards: 125.0
+Cum steps: 702019
+Rewards: 150.0
+Cum steps: 702652
+Rewards: 315.0
+Cum steps: 703661
+Rewards: 75.0
+Cum steps: 704061
+Rewards: 115.0
+Cum steps: 704704
+Rewards: 295.0
+Cum steps: 705794
+Rewards: 265.0
+Cum steps: 706918
+Rewards: 165.0
+Cum steps: 707586
+Rewards: 130.0
+Cum steps: 708257
+Rewards: 170.0
+Cum steps: 709100
+Rewards: 510.0
+Cum steps: 710198
+Rewards: 135.0
+Cum steps: 711016
+Rewards: 70.0
+Cum steps: 711527
+Rewards: 210.0
+Cum steps: 712334
+Rewards: 345.0
+Cum steps: 713338
+Rewards: 490.0
+Cum steps: 714775
+Rewards: 300.0
+Cum steps: 715962
+Rewards: 140.0
+Cum steps: 716581
+Rewards: 310.0
+Cum steps: 717736
+Rewards: 75.0
+Cum steps: 718188
+Rewards: 110.0
+Cum steps: 718880
+Rewards: 235.0
+Cum steps: 719626
+Rewards: 875.0
+Cum steps: 721057
+Rewards: 245.0
+Cum steps: 722020
+Rewards: 325.0
+Cum steps: 723119
+Rewards: 405.0
+Cum steps: 724281
+Rewards: 275.0
+Cum steps: 725260
+Rewards: 120.0
+Cum steps: 725852
+Rewards: 240.0
+Cum steps: 726661
+Rewards: 555.0
+Cum steps: 727732
+Rewards: 120.0
+Cum steps: 728151
+Rewards: 280.0
+Cum steps: 729035
+Rewards: 300.0
+Cum steps: 730075
+Rewards: 175.0
+Cum steps: 730870
+Rewards: 195.0
+Cum steps: 731755
+Rewards: 185.0
+Cum steps: 732399
+Rewards: 50.0
+Cum steps: 733021
+Rewards: 95.0
+Cum steps: 733665
+Rewards: 120.0
+Cum steps: 734348

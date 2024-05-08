@@ -24,7 +24,7 @@ from tqdm import tqdm
 
 print = partial(print, flush=True)
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 # DEVICE="cuda:1" 
 # DEVICE=torch.device("cpu")
 
@@ -43,16 +43,16 @@ class TrainConfig:
 
 
 config = TrainConfig(
-    network_dir= "context_paper_network_v2",
+    network_dir= "please_work_stride_4",
     batch_size=128,
-    gamma = 0.99,
+    gamma = 0.999,
     eps_start = 0.9,
     eps_end = 0.1,
-    eps_decay = 1000,
+    eps_decay = 360_000,
     tau = 0.005,
     lr = 1e-4,
     num_episodes = 100_000,
-    len_memory = 10_000,
+    len_memory = 20_000,
 )
 
 class Agent():
@@ -64,6 +64,7 @@ class Agent():
 
     def train(self, train_config: TrainConfig):
         self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type['id'])
+        # self.baseline_reward=160
         model_dir = ("models" / Path(train_config.network_dir))
         if model_dir.exists():
             if len(sys.argv) <= 1 or not sys.argv[1] == "--force":
@@ -159,7 +160,7 @@ class Agent():
             state = deque(maxlen=self.num_frames)
 
             for t in count():
-                action = select_action(state) if len(state) >= self.num_frames else torch.tensor([[env.action_space.sample()]], device=DEVICE, dtype=torch.long)
+                action = select_action(state) if len(state) >= self.num_frames else torch.tensor([[0]], device=DEVICE, dtype=torch.long)
 
                 observation, reward, terminated, truncated, _ = env.step(action.item())
                 rewards.append(reward)
@@ -222,7 +223,7 @@ class Agent():
             state.append(observation)
 
             while True:
-                action = self.get_action(state) if len(state) >= self.num_frames else env.action_space.sample()
+                action = self.get_action(state) if len(state) >= self.num_frames else 0
                 
                 observation, reward, terminated, truncated, info = env.step(action)
                 
@@ -270,8 +271,8 @@ if __name__ == "__main__":
     env = gym.make("ALE/SpaceInvaders-v5", obs_type="grayscale", frameskip=3)
     n_observations = env.observation_space.shape[0]
     n_actions = env.action_space.n
-    policy_net = CNN(n_actions)
-    agent = Agent("ALE/SpaceInvaders-v5", policy_net)
+    policy_net = CNN(2, n_actions)
+    agent = Agent({'id': "ALE/SpaceInvaders-v5", 'obs_type': 'grayscale', 'frameskip':3}, policy_net, num_frames=2)
     agent.train(config)
     # agent = Agent("ALE/SpaceInvaders-v5", torch.load("models/supercracked_macronetwork/model.pt"))
     agent.play()
