@@ -7,6 +7,7 @@ import gymnasium as gym
 from tqdm import tqdm
 
 def get_baseline_reward(game_type):
+    
     env = gym.make(game_type)
     # Approximate reward of random policy by running the environment
     rewards = []

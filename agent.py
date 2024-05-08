@@ -25,11 +25,12 @@ from tqdm import tqdm
 print = partial(print, flush=True)
 
 # DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-DEVICE="cuda:1" 
-# DEVICE=torch.device("cpu")
+# DEVICE="cuda:1" 
+DEVICE=torch.device("cpu")
 
 @dataclass
 class TrainConfig:
+    network_dir: str
     batch_size: int
     gamma: float
     eps_start: float
@@ -39,9 +40,9 @@ class TrainConfig:
     lr: float
     num_episodes: int
 
-CNN_DIR = "context_paper_network_v2"
 
 config = TrainConfig(
+    network_dir= "context_paper_network_v2",
     batch_size=128,
     gamma = 0.99,
     eps_start = 0.9,
@@ -53,14 +54,14 @@ config = TrainConfig(
 )
 
 class Agent():
-    def __init__(self, game_type : str, policy_net : nn.Module):
+    def __init__(self, game_type : dict[str, object], policy_net : nn.Module):
         self.game_type = game_type
         self.policy_net = policy_net.to(DEVICE)
         
 
     def train(self, train_config: TrainConfig):
-        self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type)
-        model_dir = ("models" / Path(CNN_DIR))
+        self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type['id'])
+        model_dir = ("models" / Path(train_config.netw))
         if model_dir.exists():
             if len(sys.argv) <= 1 or not sys.argv[1] == "--force":
                 raise FileExistsError(f"Model directory {model_dir} already exists")
@@ -71,7 +72,7 @@ class Agent():
 
         target_net = deepcopy(self.policy_net)
 
-        env = gym.make(self.game_type, obs_type="grayscale", frameskip=3)
+        env = gym.make(**self.game_type)
 
         optimizer = optim.AdamW(self.policy_net.parameters(), lr=train_config.lr, amsgrad=True)
 
@@ -203,38 +204,43 @@ class Agent():
 
     def get_action(self, state):
         with torch.no_grad():
-            state = torch.cat(state).unsqueeze(0)
+            state = torch.stack(tuple(state)).unsqueeze(0)
             return self.policy_net(state).argmax(dim=1).item()
         
-    def play(self):
-        env = gym.make(self.game_type, obs_type="grayscale", render_mode="human", frameskip=3)
-        observation, info = env.reset()
+    def play(self, restarts = 1):
+        # env = gym.make(self.game_type, obs_type="grayscale", render_mode="human", frameskip=3)
+        env = gym.make(**self.game_type, render_mode="human")
         
-        state = deque(maxlen=4)
-        state.append(observation)
-
-        while True:
-            action = self.get_action(state) if len(state) >= 4 else env.action_space.sample()
+        for _ in range(restarts):
+            observation, info = env.reset()
             
-            observation, reward, terminated, truncated, info = env.step(action)
-            
+            state = deque(maxlen=4)
             observation = torch.tensor(observation, dtype=torch.float32, device=DEVICE)
             state.append(observation)
-            
-            if terminated or truncated:
-                break
+
+            while True:
+                action = self.get_action(state) if len(state) >= 4 else env.action_space.sample()
+                
+                observation, reward, terminated, truncated, info = env.step(action)
+                
+                observation = torch.tensor(observation, dtype=torch.float32, device=DEVICE)
+                state.append(observation)
+                
+                if terminated or truncated:
+                    break
 
 class DQN(nn.Module):
 
     def __init__(self, n_observations, n_actions):
         super(DQN, self).__init__()
-        self.layer1 = nn.Linear(n_observations, 128)
+        self.layer1 = nn.Linear(4*n_observations, 128)
         self.layer2 = nn.Linear(128, 128)
         self.layer3 = nn.Linear(128, n_actions)
 
     # Called with either one element to determine next action, or a batch
     # during optimization. Returns tensor([[left0exp,right0exp]...]).
     def forward(self, x) -> torch.Tensor:
+        x = x.flatten(1)
         x = F.relu(self.layer1(x))
         x = F.relu(self.layer2(x))
         return self.layer3(x)
