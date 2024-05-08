@@ -1,5 +1,6 @@
 from agent import *
 import gymnasium as gym
+import sys
 
 config = TrainConfig(
     network_dir='cartpole_gpu',
@@ -15,10 +16,12 @@ config = TrainConfig(
 )
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 cart_pole_demo.py <model_path>")
+        sys.exit(1)
+    
     env = gym.make("CartPole-v1")
-    network = torch.load('models/cartpole/model.pt')
+    network = torch.load(sys.argv[1], map_location=torch.device('cpu'))
     agent = Agent({'id': "CartPole-v1"}, network, num_frames=1)
 
-    agent.train(config)
-
-    agent.play()
+    agent.play(restarts=5)
