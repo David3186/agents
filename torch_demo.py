@@ -130,6 +130,7 @@ def plot_durations(show_result=False):
         plt.plot(means.numpy())
 
     plt.pause(0.001)  # pause a bit so that plots are updated
+    plt.savefig('cartpole.png')
     if is_ipython:
         if not show_result:
             display.display(plt.gcf())

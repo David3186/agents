@@ -24,9 +24,9 @@ from tqdm import tqdm
 
 print = partial(print, flush=True)
 
-# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # DEVICE="cuda:1" 
-DEVICE=torch.device("cpu")
+# DEVICE=torch.device("cpu")
 
 @dataclass
 class TrainConfig:
@@ -39,6 +39,7 @@ class TrainConfig:
     tau: float
     lr: float
     num_episodes: int
+    len_memory: int
 
 
 config = TrainConfig(
@@ -50,18 +51,20 @@ config = TrainConfig(
     eps_decay = 1000,
     tau = 0.005,
     lr = 1e-4,
-    num_episodes = 100_000
+    num_episodes = 100_000,
+    len_memory = 10_000,
 )
 
 class Agent():
-    def __init__(self, game_type : dict[str, object], policy_net : nn.Module):
+    def __init__(self, game_type : dict[str, object], policy_net : nn.Module, num_frames=4):
         self.game_type = game_type
+        self.num_frames = num_frames
         self.policy_net = policy_net.to(DEVICE)
         
 
     def train(self, train_config: TrainConfig):
         self.baseline_reward = plot_running_avg.get_baseline_reward(self.game_type['id'])
-        model_dir = ("models" / Path(train_config.netw))
+        model_dir = ("models" / Path(train_config.network_dir))
         if model_dir.exists():
             if len(sys.argv) <= 1 or not sys.argv[1] == "--force":
                 raise FileExistsError(f"Model directory {model_dir} already exists")
@@ -76,7 +79,7 @@ class Agent():
 
         optimizer = optim.AdamW(self.policy_net.parameters(), lr=train_config.lr, amsgrad=True)
 
-        memory = ReplayMemory(20_000)
+        memory = ReplayMemory(train_config.len_memory)
         
         steps_done = 0
         data = []
@@ -153,10 +156,10 @@ class Agent():
                 torch.save(self.policy_net, CNN_FILE)
                 plot_running_avg.plot_running_avg(data, model_dir, self.baseline_reward)
 
-            state = deque(maxlen=4)
+            state = deque(maxlen=self.num_frames)
 
             for t in count():
-                action = select_action(state) if len(state) >= 4 else torch.tensor([[env.action_space.sample()]], device=DEVICE, dtype=torch.long)
+                action = select_action(state) if len(state) >= self.num_frames else torch.tensor([[env.action_space.sample()]], device=DEVICE, dtype=torch.long)
 
                 observation, reward, terminated, truncated, _ = env.step(action.item())
                 rewards.append(reward)
@@ -171,7 +174,7 @@ class Agent():
                     next_state.append(torch.tensor(observation, dtype=torch.float32, device=DEVICE).unsqueeze(0))
 
                 # Store the transition in memory
-                if len(state) >= 4: 
+                if len(state) >= self.num_frames: 
                     memory.push(torch.cat(tuple(state)), action, torch.cat(tuple(next_state)) if next_state else None, reward)
 
                 # Move to the next state
@@ -214,12 +217,12 @@ class Agent():
         for _ in range(restarts):
             observation, info = env.reset()
             
-            state = deque(maxlen=4)
+            state = deque(maxlen=self.num_frames)
             observation = torch.tensor(observation, dtype=torch.float32, device=DEVICE)
             state.append(observation)
 
             while True:
-                action = self.get_action(state) if len(state) >= 4 else env.action_space.sample()
+                action = self.get_action(state) if len(state) >= self.num_frames else env.action_space.sample()
                 
                 observation, reward, terminated, truncated, info = env.step(action)
                 
@@ -231,9 +234,9 @@ class Agent():
 
 class DQN(nn.Module):
 
-    def __init__(self, n_observations, n_actions):
+    def __init__(self, num_frames, n_observations, n_actions):
         super(DQN, self).__init__()
-        self.layer1 = nn.Linear(4*n_observations, 128)
+        self.layer1 = nn.Linear(num_frames*n_observations, 128)
         self.layer2 = nn.Linear(128, 128)
         self.layer3 = nn.Linear(128, n_actions)
 
@@ -246,9 +249,9 @@ class DQN(nn.Module):
         return self.layer3(x)
 
 class CNN(nn.Module):
-    def __init__(self, n_actions):
+    def __init__(self, num_frames, n_actions):
         super().__init__()
-        self.conv1 = nn.Conv2d(4, 16, 8, 4)
+        self.conv1 = nn.Conv2d(num_frames, 16, 8, 4)
         self.conv2 = nn.Conv2d(16, 32, 4, 2)
         self.fc1 = nn.Linear(13824, 256)
         self.fc2 = nn.Linear(256, n_actions)
